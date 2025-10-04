@@ -33,7 +33,8 @@ const UserSchema = new Schema({
 
 const TaskSchema = new Schema({
     title: { type: String, required: true },
-    complete: { type: Boolean, default: false }
+    complete: { type: Boolean, default: false },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'users', required: true }
 })
 
 export const UserModel = mongoose.model("users", UserSchema);
